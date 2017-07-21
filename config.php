@@ -7,10 +7,10 @@
  */
 return array(
     'database'=>array(
-        'host'=>'localhost',
-        'user'=>'root',
-        'pass'=>'',
-        'database'=>'test',
-        'port'=>'3306'
+        'host'=>'sqld.duapp.com',
+        'user'=>'5b10c649f53148c2bc140eba548ca18e',
+        'pass'=>'14133de1f6b44ed489d4d611ff9212ab',
+        'database'=>'HKRYPbAZvKRMwDoxRdFk',
+        'port'=>'4050'
     )
 );
