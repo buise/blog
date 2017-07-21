@@ -1,0 +1,158 @@
+.box{
+    height:60px;
+    border:1px solid #e4e4e4;
+}
+.boxs{
+    height:60px;
+}
+.left{
+    height:100%;
+    line-height: 60px;
+}
+.logo{
+    display: block;
+    height:58px;
+}
+.logo:hover{
+    color:#337ab7;
+    text-decoration: none;
+}
+.left img{
+    display: block;
+    width:50px;
+    margin-top:4px;
+    float:left;
+    margin-right:10px;
+}
+.left span{
+    font-size: 24px;
+}
+.right{
+    height:100%;
+}
+.write{
+    display: block;
+    width:33.3333%;
+    height:36px;
+    background: #ff6709;
+    float:right;
+    text-align: center;
+    line-height: 36px;
+    color:#fff;
+    margin-top:12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.write:hover{
+    color:#fff;
+}
+.login{
+    width:66.6667%;
+    float:right;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+}
+.login a{
+    color:#999;
+    cursor: pointer;
+}
+.login a:hover{
+    color:#ff6709;
+}
+
+/*点击登录弹出框*/
+.hid,.den{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgba(1,1,1,0.3);
+    z-index: 10000;
+    display: none;
+}
+.con,.tent{
+    width:350px;
+    height:380px;
+    background:#fff;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    border-radius: 5px;
+}
+.tent{
+    height:490px;
+}
+.con .lo-top,.tent .lo-top{
+    width:100%;
+    height:50px;
+    background: dodgerblue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color:#fff;
+    margin-bottom: 30px;
+}
+.con form,.tent form{
+    width:280px;
+    margin:0 auto;
+    border: 1px solid #e4e4e4;
+    padding:10px 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.con form div,.tent form div{
+    height:60px;
+}
+.con form input,.tent form input{
+    width:220px;
+    height:30px;
+    margin-top:10px;
+    border: 0;
+    border-bottom:1px solid #cccc77;
+}
+.con form input[name='code'],.tent form input[name='code']{
+    width:120px;
+}
+.con form .submit,.tent form .submit{
+    display: block;
+    width:70%;
+    height:30px;
+    border:0;
+    margin:0 auto;
+    border-radius: 5px;
+    background: dodgerblue;
+    color:#fff;
+    text-align: center;
+    line-height: 30px;
+}
+.con form a,.tent form a{
+    display: block;
+    margin: 10px auto 0 auto;
+    text-align:right;
+    color:#999;
+}
+.con form a:hover,.tent form a:hover{
+    color:#ff6709;
+}
+#huo{
+    width:80px;
+    height:30px;
+    margin-left:10px;
+    border:none;
+    background: #ff6709;
+    border-radius:3px;
+    color:#fff;
+    position: absolute;
+    left:190px;
+    top:338px;
+    text-align: center;
+    line-height: 30px;
+}

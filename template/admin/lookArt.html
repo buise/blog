@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{JS_PATH}jquery.min.js"></script>
+    <script src="{JS_PATH}iscroll.js"></script>
+    <script src="{JS_PATH}lookArt.js"></script>
+</head>
+<style>
+    table{
+        border: 1px solid #e4e4e4;
+        margin:20px auto;
+        display: block;
+        float:right;
+        width:1100px;
+    }
+    th,td{
+        border: 1px solid #e4e4e4;
+        box-sizing: border-box;
+        padding:5px 15px;
+        text-align: center;
+
+    }
+    td:nth-child(3){
+        text-align: left;
+    }
+    td:nth-child(6){
+        width:300px;
+        overflow: hidden;
+    }
+    a{
+        color:#555;
+    }
+    a:hover{
+        color:#FF6709;
+    }
+    .look{
+        width:80px;
+        height:30px;
+        background: #ff6709;
+        border-radius:5px;
+        color:#fff;
+        text-align: center;
+        line-height:30px;
+    }
+    .status{
+        width:60px;
+        height:30px;
+        text-align: center;
+        line-height:30px;
+        border-radius:5px;
+        color:#fff;
+    }
+    .hidden{
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        background: rgba(0,0,0,0.8);
+        display: none;
+    }
+    .hidden-con{
+        position: absolute;
+        left:80px;
+        top:40px;
+        right:150px;
+        bottom:20px;
+        overflow: scroll;
+        background: #fff;
+        z-index: 10;
+        text-align: left;
+        padding:10px;
+    }
+    button{
+        width:80px;
+        height:30px;
+        position: absolute;
+        right:40px;
+        background: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    button:nth-of-type(1){
+        top:100px;
+    }
+    button:nth-of-type(2){
+        top:150px;
+    }
+    button:nth-of-type(3){
+        top:200px;
+    }
+    .page{
+        width:100%;
+        height:30px;
+        line-height:30px;
+        text-align: center;
+        position: fixed;
+        bottom:0;
+        left:0;
+        background: rgba(0,0,0,0.1);
+        margin:0;
+    }
+</style>
+<body>
+<table cellspacing="0">
+    <tr>
+        <th>文章ID</th>
+        <th>文章标题</th>
+        <th>文章类型</th>
+        <th>文章作者</th>
+        <th>关键字</th>
+        <th>简介</th>
+        <th>缩略图</th>
+        <th>查看内容</th>
+        <th>文章状态</th>
+    </tr>
+    {foreach $article as $v}
+    <tr id="aa{$v['wid']}">
+        <td>{$v['wid']}</td>
+        <td>{$v['wtitle']}</td>
+        <td>{$v['cid']}</td>
+        <td>{$v['wauthor']}</td>
+        <td>{$v['wword']}</td>
+        <td>{$v['wjj']}</td>
+        <td>
+            <img src="{$v['wimg']}" alt="" style="width:100px;max-height: 100px">
+        </td>
+        <td>
+            <div class="look" wid="{$v['wid']}">观看</div>
+            <div class="hidden">
+                <div class="hidden-con">
+                    {$v['wcon']}
+                </div>
+                <button class="tg">通过</button>
+                <button class="jy">禁言</button>
+                <button class="gb" value="$v['wstatus']" id="{$v['wid']}">关闭</button>
+            </div>
+        </td>
+        <td>
+            <input type="hidden" name="eee" value="0">
+            {if $v['wstatus'] eq 0}
+            <div class="status" style="background: #e4e4e4">
+                审核中
+            </div>
+            {elseif $v['wstatus'] eq 1}
+            <div class="status" style="background: green">
+                已通过
+            </div>
+            {elseif $v['wstatus'] eq 2}
+            <div class="status" style="background: red">
+                未通过
+            </div>
+            {/if}
+        </td>
+    </tr>
+    {/foreach}
+</table>
+<p class="page">{$pages}</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+body,html{
+    width:100%;
+    height:100%;
+}
+/*上边*/
+#top{
+    width:100%;
+    height:15%;
+    background:blueviolet;
+    text-align: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+#top h1{
+    font-size:28px;
+    color:#fff;
+}
+#top h1 span{
+    color:pink;
+}
+#top h1 a{
+    color:#aaa;
+    font-size:16px;
+}
+#top h1 a:hover{
+    color:#ff6709;
+}
+#top h2{
+    text-align: right;
+}
+#top h2 span{
+    font-size:16px;
+    margin-right:10px;
+}
+.index{
+    display: block;
+    float:left;
+    font-size: 16px;
+    line-height: 31px;
+    margin-left:40px;
+    text-decoration:underline;
+    color:lightpink;
+}
+/*左边*/
+#left{
+    width:15%;
+    height:85%;
+    background: cornflowerblue;
+    float:left;
+    padding:40px;
+    box-sizing: border-box;
+}
+#left > ul > li{
+    margin-bottom:30px;
+}
+#left > ul > li > ul{
+    margin-left:20px;
+}
+ul > li > ul > li{
+    margin:5px 0;
+}
+/*右边*/
+#right{
+    width:85%;
+    height:85%;
+    background: aliceblue;
+    float:left;
+}

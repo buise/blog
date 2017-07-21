@@ -1,0 +1,209 @@
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+}
+.content{
+    width:1000px;
+    margin:0 auto;
+    background: #eee;
+}
+.swiper-container{
+    width:700px;
+    height:300px;
+    margin: 0!important;
+    float:left;
+}
+.swiper-wrapper{
+    width:100%;
+    height:100%;
+}
+.swiper-slide{
+    display: block;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.swiper-slide img{
+    width:700px;
+}
+.banner-title{
+    position: absolute;
+    left:0;
+    bottom:0;
+    height:40px;
+    width:100%;
+    margin:0;
+    background: rgba(255,255,255,0.5);
+    line-height: 40px;
+    text-indent: 20px;
+    font-size:16px;
+    color:#333;
+}
+
+
+.banner{
+    float:left;
+    width:300px;
+    height:300px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.banner h3{
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-family: "title";
+}
+.banner ul{
+    margin-top:10px;
+    width:100%;
+}
+.banner li{
+    width:100%;
+    height:30px;
+    overflow:hidden;
+    line-height: 30px;
+    margin:5px 0;
+    font-weight: 100;
+    font-size:18px;
+}
+.banner li a{
+    color:#000;
+}
+
+.choose{
+    margin-top:20px;
+    float:left;
+    width:100%;
+    background: blueviolet;
+    border-radius: 10px;
+}
+.choose ul{
+    width:100%;
+}
+.choose li{
+    height:40px;
+    padding:0 10px;
+    line-height: 40px;
+    float:left;
+    border:2px solid #e4e4e4;
+    border-radius:50%;
+    margin:10px 20px;
+}
+.choose li a{
+    color:#fff;
+}
+
+
+/*文章列表*/
+.article{
+    float:left;
+    margin-top:20px;
+    width:600px;
+    border-top:1px solid #e4e4e4;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.article ul{
+    width:100%;
+}
+.article li{
+    width:100%;
+    padding:10px 0;
+    overflow: hidden;
+}
+.article li .top{
+    width:450px;
+    height:40px;
+    float:left;
+}
+.article li .top img{
+    width:40px;
+    height:40px;
+    display: block;
+    float:left;
+}
+.article li .top h2{
+    float:left;
+    line-height: 40px;
+    font-size:20px;
+    margin-left:10px;
+}
+.article li .top h3{
+    float:left;
+    line-height: 40px;
+    font-size:14px;
+    color:#aaa;
+    margin-left:10px;
+}
+.article .midden{
+    width:440px;
+    float:left;
+}
+.article .midden .art-title{
+    height:40px;
+    font-size:26px;
+    display: block;
+    color:#000;
+}
+.article .midden p{
+    height:40px;
+    font-size:16px;
+    overflow: hidden;
+}
+.article .midden h1{
+    height:25px;
+    line-height: 25px;
+    font-size:16px;
+    padding:0 10px;
+    border:1px solid red;
+    float:left;
+    border-radius:3px;
+    color:red;
+}
+.art-right{
+    height:150px;
+    float:right;
+    width:150px;
+}
+
+/*作者*/
+.author{
+    width:370px;
+    float:right;
+    margin-top:20px;
+}
+.author h3{
+    width:100%;
+    height:50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+.author h3 span{
+    color:#aaa;
+}
+.author ul{
+    width:100%;
+    height:200px;
+    overflow: hidden;
+}
+.author li{
+    padding: 0 10px;
+    height:40px;
+    border:1px solid #e4e4e4;
+    border-radius: 5px;
+    float:left;
+    margin:5px 10px;
+}
+.author li a{
+    display: block;
+}
+.author li img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+}
+.author li span{
+    margin-left:5px;
+    line-height: 40px;
+    color:#000;
+}

@@ -1,0 +1,16 @@
+********************��Ӧ��***********************************************
+��Ҫ�����õ�js��
+<script type="text/javascript" charset="utf-8" src="ueditor.config.json"></script>
+<script type="text/javascript" charset="utf-8" src="ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="../editor/lang/zh-cn/zh-cn.js"></script>
+
+
+
+��Ҫ��д��html��
+<script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>����С�ɵ���
+
+
+��Ҫ��Ƕ��ĵ��÷�����
+<script>
+    var ue = UE.getEditor('editor');
+</script>

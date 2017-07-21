@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{CSS_PATH}bootstrap.css">
+</head>
+<style>
+    table{
+        border: 1px solid #e4e4e4;
+        margin:20px auto;
+    }
+    th,td{
+        border: 1px solid #e4e4e4;
+        box-sizing: border-box;
+        padding:5px 15px;
+        text-align: center;
+    }
+    td:nth-child(2){
+        text-align: left;
+    }
+    a{
+        color:#555;
+    }
+    a:hover{
+        color:#FF6709;
+    }
+</style>
+<body>
+<table cellspacing="0" class="table table-striped">
+    <tr>
+        <th>会员ID</th>
+        <th>头像</th>
+        <th>会员名</th>
+        <th>电话</th>
+        <th>昵称</th>
+    </tr>
+    {foreach $person as $v}
+    <tr>
+        <td>{$v['pid']}</td>
+        <td>
+            <img src="{$v['pimg']}" alt="" style="width:40px;height:40px;border-radius:50%;">
+        </td>
+        <td>{$v['pname']}</td>
+        <td>{$v['ptel']}</td>
+        <td>{$v['pnick']}</td>
+    </tr>
+    {/foreach}
+</table>
+</body>
+</html>

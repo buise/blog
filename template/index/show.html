@@ -1,0 +1,102 @@
+{include $header}
+<link rel="stylesheet" href="{CSS_PATH}index-show.css">
+<script src="{JS_PATH}angular.min.js"></script>
+<script src="{JS_PATH}index-show.js"></script>
+<div class="artbox" id="{$article[0]['wid']}" ng-app="message" ng-controller="ctrl">
+    <h3 class="artitle">{$article[0]['wtitle']}</h3>
+    <p class="artjj">作者：<span> {$article[0]['wauthor']}</span> 发布时间：<span> {$article[0]['wtime']}</span> 点击量：<span> {$article[0]['wclick']+1}</span></p>
+    <img src="{$article[0]['wimg']}" alt="" class="artimg">
+    <div class="content">{$article[0]['wcon']}</div>
+
+
+
+
+    <div class="message" id="yes">
+        <h3>留言区<span>(目前有10条留言)</span></h3>
+        <textarea name="message" rows="5" ng-model="con"></textarea>
+        <button ng-click="addmess(0)">留言</button>
+        <button>取消</button>
+
+        <div class="history" ng-repeat="item in data">
+            <div class="lybox">
+                <img  src="{$article[0]['wimg']}" alt="">
+                <div class="lyxx">
+                    <h3 ng-bind="item.mname"></h3>
+                    <p><span>1楼</span> <span ng-bind="item.mtime"></span></p>
+                </div>
+                <div class="lycon" ng-bind="item.mcon">></div>
+                <button class="hfbut">回复</button>
+            </div>
+            <div class="hfbox" ng-repeat="v in item.son">
+                <p><span ng-bind="v.mname"></span><span ng-bind="v.mtime"></span></p>
+                <div class="lycon" ng-bind="v.mcon">></div>
+                <button class="hfbut">回复</button>
+            </div>
+
+            <div class="replay">
+                <textarea name="message" rows="5" ng-model="cons"></textarea>
+                <button ng-click="addmess(item.mid)">留言</button>
+                <button>取消</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="message" id="no">
+        <h3>留言区</h3>
+        <p style="padding-left:30px;line-height: 40px;height:40px;width:100%">想要留言么，请先<span style="color:#ff6709">登陆</span></p>
+    </div>
+</div>
+</body>
+<script>
+    angular.module('message',[])
+        .controller("ctrl",function ($scope,$http) {
+            $scope.cons='';
+            var id=document.querySelector('.artbox').id;
+             $http({
+                 method: 'get',
+                 url: 'index.php?f=show&a=message&id='+id,
+             }).then(function successCallback(e) {
+                 $scope.data=e.data;
+             }, function errorCallback(e) {
+                 console.log("angular error")
+             });
+
+             $scope.addmess=function (id) {
+                 var wwid=document.querySelector('.artbox').id;
+                 if(id==0){
+                     $http({
+                         method: 'get',
+                         params:{
+                             con:$scope.con,
+                             type:id,
+                         },
+                         url: 'index.php?f=show&a=addMessage&id='+wwid,
+                     }).then(function successCallback(e) {
+                         $http({
+                             method: 'get',
+                             url: 'index.php?f=show&a=message&id='+wwid,
+                         }).then(function successCallback(e) {
+                             $scope.data=e.data;
+                         })
+                     })
+                 }else{
+                     $http({
+                         method: 'get',
+                         params:{
+                             con:$scope.cons,
+                             type:id,
+                         },
+                         url: 'index.php?f=show&a=addMessage&id='+wwid,
+                     }).then(function successCallback(e) {
+                         $http({
+                             method: 'get',
+                             url: 'index.php?f=show&a=message&id='+wwid,
+                         }).then(function successCallback(e) {
+                             $scope.data=e.data;
+                         })
+                     })
+                 }
+             }
+        })
+</script>
+</html>

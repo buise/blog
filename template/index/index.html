@@ -1,0 +1,85 @@
+{include $header}
+<link rel="stylesheet" href="{CSS_PATH}index-index.css">
+<link rel="stylesheet" href="{CSS_PATH}swiper.css">
+<script src="{JS_PATH}swiper.js"></script>
+<script src="{JS_PATH}index-index.js"></script>
+<div class="content">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" href="index.php?d=index&f=show&id={$all[0]['wid']}" style="background: url('{IMG_PATH}ww.jpg');background-size: 100%;">
+                <p class="banner-title">{$all[0]['wtitle']}</p>
+            </a>
+            <a class="swiper-slide" href="index.php?d=index&f=show&id={$all[1]['wid']}" style="background: url('{IMG_PATH}bg2.jpg');background-size: 100%; background-position: center">
+                <p class="banner-title">{$all[1]['wtitle']}</p>
+            </a>
+            <a class="swiper-slide" href="index.php?d=index&f=show&id={$all[2]['wid']}" style="background: url('{IMG_PATH}X.jpg');background-size: 100%; background-position: center">
+                <p class="banner-title">{$all[2]['wtitle']}</p>
+            </a>
+            <a class="swiper-slide" href="index.php?d=index&f=show&id={$all[3]['wid']}" style="background: url('{IMG_PATH}bg.jpg');background-size: 100%">
+                <p class="banner-title">{$all[3]['wtitle']}</p>
+            </a>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="banner">
+        <h3>本周热门推荐</h3>
+        <ul>
+            {for $i=0;$i<5;$i++}
+            <li>
+                <a href="index.php?d=index&f=show&id={$all[$i]['wid']}">{$i+1}.{$all[$i]['wtitle']}</a>
+            </li>
+            {/for}
+        </ul>
+    </div>
+
+    <div class="choose">
+        <ul>
+            {foreach $category as $v}
+            <li>
+                <a href="">{$v['cname']}</a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+
+    <div class="article">
+        <ul>
+            {foreach $article as $v}
+            {if $v['wstatus'] eq 1}
+            <li>
+                <img src="{$v['wimg']}" alt="" class="art-right">
+                <div class="top">
+                    <img src="{$v['pimg']}" alt="">
+                    <h2>{$v['wauthor']}</h2>
+                    <h3>{$v['wtime']}</h3>
+                </div>
+                <div class="midden">
+                    <a href="index.php?d=index&f=show&id={$v['wid']}" class="art-title">{$v['wtitle']}</a>
+                    <p>{$v['wjj']}</p>
+                    <h1>{$v['cid']}</h1>
+                </div>
+            </li>
+            {/if}
+            {/foreach}
+        </ul>
+    </div>
+
+    <div class="author">
+        <h3><span>---------------- </span>热门作者<span> ----------------</span></h3>
+        <ul>
+            {foreach $author as $v}
+            <li>
+                <a href="">
+                    <img src="{$v['pimg']}" alt="">
+                    <span>{$v['pname']}</span>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}common.css">
+<link rel="stylesheet" href="{CSS_PATH}bootstrap.css">
+<link rel="stylesheet" href="{CSS_PATH}login.css">
+<!--<script src="{JS_PATH}jquery.min.js"></script>-->
+<!--<script src="{JS_PATH}bootstrap.min.js"></script>-->
+<body>
+<div class="container">
+    <div class="row">
+        <div class="lefts col-xs-offset-1 col-xs-10 hidden-sm hidden-md hidden-lg">
+            <span>博客后台管理入口</span>
+        </div>
+        <div class="left col-sm-offset-1 col-sm-5 hidden-xs">
+            <span>博客后台管理入口</span>
+            <img src="{IMG_PATH}right.jpg" alt="">
+        </div>
+        <div class="right col-sm-5 col-sm-offset-0 col-xs-offset-1 col-xs-10">
+            <form action="index.php?d=admin&f=login&a=check" method="post">
+                <div>
+                    <input type="text" name="name" placeholder="用户名" autocomplete="off">
+                </div>
+                <div>
+                    <input type="password" name="pass" placeholder="密码" autocomplete="off">
+                </div>
+                <div>
+                    <input type="text" name="code" placeholder="验证码" autocomplete="off">
+                    <img src="index.php?d=admin&f=login&a=png" alt="" onclick="this.src='index.php?d=admin&f=login&a=png&i='+Math.random()" style="height:40px;margin-left:10px;">
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

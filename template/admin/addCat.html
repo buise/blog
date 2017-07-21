@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{CSS_PATH}bootstrap.css">
+</head>
+<style>
+    .form-control{
+        width:30%;
+        margin:20px;
+    }
+    .btn-default{
+        height:30px;
+        margin:0 20px;
+        background: #31b0d5;
+        border-color: #46b8da;
+        color:#fff;
+    }
+</style>
+<body>
+<form action="index.php?d=admin&f=category&a=addCat" method="post">
+    <div>
+        <select name="pid" id="" class="form-control">
+            <option value="0">作为一级栏目</option>
+            {$str}
+        </select>
+    </div>
+    <div>
+        <input type="text" name="cname" class="form-control" placeholder="填写栏目名">
+    </div>
+    <div>
+        <input class="btn btn-default" type="submit">
+    </div>
+</form>
+</body>
+</html>

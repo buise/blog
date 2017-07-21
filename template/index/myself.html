@@ -1,0 +1,64 @@
+{include $header}
+<script src="{JS_PATH}upload.js"></script>
+<script src="{JS_PATH}myself.js"></script>
+<link rel="stylesheet" href="{CSS_PATH}myself.css">
+<div class="my-left">
+    <a href="index.php?a=myself" style="color:#ff6709">个人信息</a><br>
+    <a href="">发布的文章</a><br>
+    <a href="">我的留言</a><br>
+    <a href="">我的回复</a><br>
+    <a href="">我的关注</a><br>
+    <a href="">我的粉丝</a><br>
+</div>
+<div class="my-right">
+    <table>
+        <tr>
+            <td>
+                头像
+            </td>
+            <td>
+                <img src="{$person[0]['pimg']}" alt="" style="width:100px;height:100px;border-radius:50%" class="img">
+            </td>
+            <td class="boximg">
+                <input type="hidden" name="urlimg" class="urlimg">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                用户名
+            </td>
+            <td>
+                {$person[0]['pname']}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                昵称
+            </td>
+            <td>
+                <input type="text" value="{$person[0]['pnick']}" name="nick">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                修改密码
+            </td>
+            <td>
+                <input type="password" value="{$person[0]['ppass']}" name="pass2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                电话
+            </td>
+            <td>
+                <div class="tel">
+                    {$person[0]['ptel']}
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="yes">确认修改</div>
+</div>
+</body>
+</html>
